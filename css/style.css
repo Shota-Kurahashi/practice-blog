@@ -348,4 +348,12 @@ img {
     margin-top: 3rem;
     margin-bottom: 0;
   }
+  .post__img-wrapper {
+    float: none;
+    margin: 0;
+  }
+  .post__img {
+    width: 100%;
+    border-radius: 50px;
+  }
 }/*# sourceMappingURL=style.css.map */

@@ -416,4 +416,16 @@ img {
       margin-bottom: 0;
     }
   }
+
+  .post {
+    &__img-wrapper {
+      float: none;
+      margin: 0;
+    }
+
+    &__img {
+      width: 100%;
+      border-radius: 50px;
+    }
+  }
 }
