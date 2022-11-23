@@ -1,0 +1,305 @@
+$text-color: #949087;
+img {
+  width: 100%;
+}
+
+.header-img {
+  height: 170px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-top: 20px;
+}
+
+.header {
+  margin-top: 40px;
+  &__inner {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__content {
+    padding: 20px;
+    & > * {
+      margin: 0;
+    }
+  }
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: "Nerko One", cursive;
+    margin-bottom: 2.5rem;
+  }
+
+  &__text {
+    text-align: center;
+    color: $text-color;
+    font-size: 1.25rem;
+  }
+}
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  color: $text-color;
+
+  &--has-column {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__main {
+    flex: 1;
+    margin-right: 20px;
+    padding: 0 1rem;
+    & > *:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__aside {
+    width: 30%;
+
+    & > *:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+}
+
+.post {
+  &__title {
+    font-size: 1.5rem;
+    color: $text-color;
+    margin-bottom: 2rem;
+
+    &--dashedline {
+      background-image: linear-gradient(
+        45deg,
+        #fff 30%,
+        #ccc 30%,
+        #ccc 50%,
+        #fff 50%,
+        #fff 80%,
+        #ccc 80%,
+        #ccc 100%
+      );
+
+      background-size: 16px 16px;
+      padding-bottom: 8px;
+    }
+  }
+
+  &__body > *:not(:last-child) {
+    margin-bottom: 1rem;
+  }
+
+  &__title-link {
+    display: block;
+    background-color: #fff;
+    padding-bottom: 16px;
+    transition: all 0.25s;
+
+    &:hover,
+    &:focus {
+      color: darken($text-color, 40%);
+    }
+  }
+
+  &__img-wrapper {
+    position: relative;
+    float: left;
+    shape-outside: circle();
+    margin-right: 6em;
+  }
+
+  &__data {
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+
+  &__img {
+    width: 270px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 40% 70% 50% 30%/50%;
+  }
+
+  &__text {
+    line-height: 1.7;
+    color: $text-color;
+  }
+}
+
+.data {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #93d8d0;
+  color: #fff;
+  padding: 1em;
+  border-radius: 50%;
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__year {
+    font-weight: lighter;
+    border-bottom: 1px dashed #fff;
+    padding-bottom: 0.25em;
+    margin-bottom: 0.25em;
+  }
+}
+
+.btn {
+  display: inline-block;
+  max-width: 100%;
+  width: 160px;
+  border-radius: 10px;
+  padding: 16px;
+  background-color: #eda1a1;
+  border: 2px dashed #e38787;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 0 5px #eda1a1;
+  font-size: 1.125rem;
+  transition: all 0.25s;
+
+  &:hover {
+    background-color: #e38787;
+    border-color: #eda1a1;
+    box-shadow: 0 0 0 5px #e38787;
+  }
+
+  &--small {
+    width: 100px;
+    padding: 8px;
+    font-size: 0.875rem;
+    box-shadow: none;
+    border: 2px solid transparent;
+
+    &:hover {
+      background-color: #e38787;
+      box-shadow: none;
+    }
+  }
+}
+
+.btn-wrapper {
+  text-align: right;
+}
+
+.side-post {
+  padding: 32px;
+  border: 1px solid $text-color;
+  border-radius: 5px;
+  outline: 2px solid $text-color;
+  outline-offset: 4px;
+  position: relative;
+
+  &--chaise {
+    position: sticky;
+    top: 20px;
+  }
+
+  &--icon::before {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+  }
+
+  & > *:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-family: "Nerko One", cursive;
+    text-align: center;
+  }
+
+  &__list {
+    & > *:not(:last-child) {
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+    &:not(:last-child) {
+      border-bottom: 2px dashed $text-color;
+      padding-bottom: 16px;
+    }
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #93d8d0;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      top: 0.4em;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $text-color;
+    transition: all 0.25s;
+    margin-left: 1.5em;
+    line-height: 1.5;
+
+    &:hover,
+    &:focus {
+      color: #93d8d0;
+    }
+  }
+
+  &__text {
+    line-height: 1.7;
+    color: $text-color;
+    margin-bottom: 1rem;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > *:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__input {
+    padding: 8px;
+    border: 1px solid $text-color;
+    border-radius: 5px;
+    outline: none;
+    margin-bottom: 1rem;
+  }
+}
+
+.icon-cat::before {
+  content: "\f1b0";
+  width: 32px;
+  height: 32px;
+  font-size: 1.5rem;
+  top: -1rem;
+  text-align: center;
+  display: block;
+  position: absolute;
+  left: 50%;
+  translate: -50%;
+  color: $text-color;
+  background-color: #fff;
+}
