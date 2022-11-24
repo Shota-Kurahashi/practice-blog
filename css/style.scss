@@ -45,6 +45,7 @@ img {
   padding: 20px;
   background-color: #fff;
   color: $text-color;
+  padding-bottom: 2rem;
 
   &--has-column {
     display: flex;
@@ -71,10 +72,20 @@ img {
 }
 
 .post {
+  & > *:not(:last-child) {
+    margin-bottom: 3rem;
+  }
   &__title {
     font-size: 1.5rem;
     color: $text-color;
     margin-bottom: 2rem;
+
+    &--dots {
+      border-top: 2px dotted #eaeaea;
+      border-bottom: 2px dotted #eaeaea;
+      padding-bottom: 16px;
+      padding-top: 16px;
+    }
 
     &--dashedline {
       background-image: linear-gradient(
@@ -93,6 +104,13 @@ img {
     }
   }
 
+  &__sub-title {
+    font-size: 1.25rem;
+    color: $text-color;
+    margin-bottom: 1rem;
+    font-weight: 700;
+  }
+
   &__body > *:not(:last-child) {
     margin-bottom: 1rem;
   }
@@ -102,6 +120,10 @@ img {
     background-color: #fff;
     padding-bottom: 16px;
     transition: all 0.25s;
+
+    &--dots {
+      padding-bottom: 0;
+    }
 
     &:hover,
     &:focus {
@@ -114,6 +136,15 @@ img {
     float: left;
     shape-outside: circle();
     margin-right: 6em;
+
+    &--block {
+      float: none;
+      margin-bottom: 1rem;
+      margin-right: 0;
+      width: 80%;
+      margin-left: 10%;
+      margin-right: 10%;
+    }
   }
 
   &__data {
@@ -127,11 +158,53 @@ img {
     height: 200px;
     object-fit: cover;
     border-radius: 40% 70% 50% 30%/50%;
+
+    &--block {
+      width: 100%;
+      height: auto;
+      border-radius: 50px;
+    }
   }
 
   &__text {
     line-height: 1.7;
     color: $text-color;
+  }
+
+  &__text-link {
+    color: #93d8d0;
+    text-decoration: underline;
+  }
+
+  &__quote {
+    margin-right: auto;
+    margin-left: auto;
+    position: relative;
+    padding: 1em 3em;
+    width: 90%;
+
+    &::after,
+    &::before {
+      position: absolute;
+      content: "\201C";
+      display: inline-block;
+      font-family: " Font Awesome 5 Free";
+      font-size: 6rem;
+      font-weight: 900;
+      top: 0;
+      color: #eaeaea;
+    }
+
+    &::after {
+      content: "\201D";
+      right: 0;
+      top: 0.75em;
+    }
+
+    &::before {
+      left: -0.1em;
+      top: -0.25em;
+    }
   }
 }
 
@@ -233,22 +306,9 @@ img {
   &__item {
     display: flex;
     align-items: center;
-    position: relative;
     &:not(:last-child) {
       border-bottom: 2px dashed $text-color;
       padding-bottom: 16px;
-    }
-
-    &:before {
-      position: absolute;
-      content: "";
-      display: inline-block;
-      width: 10px;
-      height: 10px;
-      background-color: #93d8d0;
-      border-radius: 50%;
-      margin-right: 0.5rem;
-      top: 0.4em;
     }
   }
 
@@ -389,6 +449,54 @@ img {
   }
 }
 
+.list {
+  & > *:not(:last-child) {
+    margin-bottom: 0.5rem;
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    &:before {
+      position: absolute;
+      content: "";
+      display: inline-block;
+      width: 10px;
+      height: 10px;
+      background-color: #93d8d0;
+      border-radius: 50%;
+      margin-right: 0.5rem;
+      top: 0.5em;
+    }
+
+    &--count {
+      counter-increment: list;
+
+      &:before {
+        content: counter(list);
+        background-color: transparent;
+        color: #93d8d0;
+        top: 0.2em;
+      }
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    color: $text-color;
+    transition: all 0.25s;
+    margin-left: 1.5em;
+    line-height: 1.5;
+
+    &:hover,
+    &:focus {
+      color: #93d8d0;
+    }
+  }
+}
+
 @media (max-width: 768px) {
   .content {
     &--has-column {
@@ -427,5 +535,11 @@ img {
       width: 100%;
       border-radius: 50px;
     }
+  }
+
+  .btn {
+    width: 120px;
+    padding: 10px;
+    font-size: 1em;
   }
 }
