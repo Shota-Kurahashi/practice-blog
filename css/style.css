@@ -153,17 +153,16 @@ img {
 .post__quote::after, .post__quote::before {
   position: absolute;
   content: "“";
-  display: inline-block;
+  display: block;
   font-family: " Font Awesome 5 Free";
-  font-size: 6rem;
   font-weight: 900;
-  top: 0;
+  font-size: 6rem;
   color: #eaeaea;
 }
 .post__quote::after {
   content: "”";
   right: 0;
-  top: 0.75em;
+  bottom: -0.75em;
 }
 .post__quote::before {
   left: -0.1em;
@@ -427,8 +426,10 @@ img {
     width: 100%;
   }
   .content__aside {
+    margin-top: 2rem;
     width: 75%;
-    margin: 0 auto;
+    margin-right: auto;
+    margin-left: auto;
   }
   .pager--md {
     display: none;

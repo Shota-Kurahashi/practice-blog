@@ -187,18 +187,17 @@ img {
     &::before {
       position: absolute;
       content: "\201C";
-      display: inline-block;
+      display: block;
       font-family: " Font Awesome 5 Free";
-      font-size: 6rem;
       font-weight: 900;
-      top: 0;
+      font-size: 6rem;
       color: #eaeaea;
     }
 
     &::after {
       content: "\201D";
       right: 0;
-      top: 0.75em;
+      bottom: -0.75em;
     }
 
     &::before {
@@ -508,8 +507,10 @@ img {
     }
 
     &__aside {
+      margin-top: 2rem;
       width: 75%;
-      margin: 0 auto;
+      margin-right: auto;
+      margin-left: auto;
     }
   }
 
