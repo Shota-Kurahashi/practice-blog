@@ -529,6 +529,11 @@ img {
     &__img-wrapper {
       float: none;
       margin: 0;
+
+      &--block {
+        margin-right: auto;
+        margin-left: auto;
+      }
     }
 
     &__img {
