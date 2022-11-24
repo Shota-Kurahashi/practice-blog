@@ -548,4 +548,35 @@ img {
     padding: 10px;
     font-size: 1em;
   }
+
+  .header {
+    &__text {
+      font-size: 1rem;
+    }
+  }
+
+  .post {
+    &__title {
+      font-size: 1.25rem;
+    }
+
+    &__text {
+      font-size: 0.85rem;
+    }
+  }
+
+  .list {
+    &__item {
+      font-size: 0.85rem;
+    }
+  }
+
+  .side-post {
+    &__item {
+      &:not(:last-child) {
+        border-bottom: 2px dashed $text-color;
+        padding-bottom: 12px;
+      }
+    }
+  }
 }

@@ -456,4 +456,20 @@ img {
     padding: 10px;
     font-size: 1em;
   }
+  .header__text {
+    font-size: 1rem;
+  }
+  .post__title {
+    font-size: 1.25rem;
+  }
+  .post__text {
+    font-size: 0.85rem;
+  }
+  .list__item {
+    font-size: 0.85rem;
+  }
+  .side-post__item:not(:last-child) {
+    border-bottom: 2px dashed #949087;
+    padding-bottom: 12px;
+  }
 }/*# sourceMappingURL=style.css.map */
